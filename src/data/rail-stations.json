@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Stadium Metro Rail Station",
+    "latitude": 9.0456,
+    "longitude": 7.4517,
+    "type": "major",
+    "details": "Located in the Kubwa Central Business District, Abuja FCT. It serves as a major metro stop connecting important routes."
+  },
+  {
+    "name": "Nnamdi Azikiwe Airport Rail Station",
+    "latitude": 9.0504,
+    "longitude": 7.4718,
+    "type": "major",
+    "details": "This station is a key transportation hub for passengers traveling to and from the Nnamdi Azikiwe International Airport in Abuja FCT."
+  },
+  {
+    "name": "Idu Rail Station",
+    "latitude": 9.1079,
+    "longitude": 7.4011,
+    "type": "major",
+    "details": "Idu Station is a key interchange point between Abuja's light rail system and national rail network. Built in 2018, it offers modern amenities for passengers."
+  },
+  {
+    "name": "Jere Rail Station",
+    "latitude": 9.56667,
+    "longitude": 7.43333,
+    "type": "minor",
+    "details": "Jere is a stop on the Abuja-Kaduna railway line, providing essential services for passengers."
+  },
+  {
+    "name": "Asham Rail Station",
+    "latitude": 10.34385,
+    "longitude": 8.280515,
+    "type": "minor",
+    "details": "A small station located in Kaduna State, serving the local community and travelers."
+  },
+  {
+    "name": "Rijana Rail Station",
+    "latitude": 10.0489,
+    "longitude": 7.3760,
+    "type": "minor",
+    "details": "Rijana Station is situated along the Abuja-Kaduna line and offers services for local travelers."
+  },
+  {
+    "name": "Rigasa Rail Station",
+    "latitude": 10.5292,
+    "longitude": 7.4283,
+    "type": "major",
+    "details": "Rigasa is the main terminal for the Abuja-Kaduna railway line, offering extensive passenger facilities and modern amenities."
+  },
+  {
+    "name": "Iddo Rail Station",
+    "latitude": 6.4785,
+    "longitude": 3.3792,
+    "type": "major",
+    "details": "Iddo Station is one of Lagos' key railway stations, providing vital connections for the Lagos rail network."
+  },
+  {
+    "name": "Mobolaji Johnson Station (MJS)",
+    "latitude": 6.4755,
+    "longitude": 3.3667,
+    "type": "major",
+    "details": "Named after a former Lagos Governor, this station is located on Muritala Muhammad Way and is part of the modern Lagos rail infrastructure."
+  },
+  {
+    "name": "Babatunde Fashola Rail Station",
+    "latitude": 6.5693,
+    "longitude": 3.3500,
+    "type": "major",
+    "details": "A modern station located in Agege, Lagos State, providing rail services to local and regional passengers."
+  },
+  {
+    "name": "Ibadan Rail Station",
+    "latitude": 7.4090,
+    "longitude": 3.9034,
+    "type": "major",
+    "details": "Ibadan Rail Station connects Oyo State to the wider Nigerian rail network, offering key services to passengers traveling across the country."
+  },
+  {
+    "name": "Abeokuta Rail Station",
+    "latitude": 7.1452,
+    "longitude": 3.3601,
+    "type": "major",
+    "details": "Located in Abeokuta, Ogun State, this station is part of the Lagos-Ibadan railway line, providing an important stop for commuters."
+  },
+  {
+    "name": "Wole Soyinka Rail Station",
+    "latitude": 7.1447,
+    "longitude": 3.3505,
+    "type": "major",
+    "details": "Named after Nigerian Nobel laureate Wole Soyinka, this station is in Abeokuta and plays a key role in regional rail transport."
+  },
+  {
+    "name": "Ijoko Rail Station",
+    "latitude": 6.6702,
+    "longitude": 3.3474,
+    "type": "minor",
+    "details": "Ijoko is a smaller station in Ogun State, offering rail services along the Lagos-Ijoko line."
+  },
+  {
+    "name": "Ujevwu Rail Station",
+    "latitude": 5.6481,
+    "longitude": 5.7546,
+    "type": "major",
+    "details": "A station located in Warri, Delta State, Ujevwu is part of the Warri-Itakpe rail line, providing important connections for regional passengers."
+  },
+  {
+    "name": "Itakpe Rail Station",
+    "latitude": 7.4904,
+    "longitude": 6.3040,
+    "type": "major",
+    "details": "Itakpe is a crucial station on the Warri-Itakpe line, offering modern passenger facilities and services."
+  },
+  {
+    "name": "Osoosun Rail Station",
+    "latitude": 6.8788,
+    "longitude": 3.3189,
+    "type": "development",
+    "details": "Currently under construction, Osoosun Station will serve Ogun State and expand rail connectivity in the region."
+  },
+  {
+    "name": "Kajola Rail Station",
+    "latitude": 6.8798,
+    "longitude": 3.0663,
+    "type": "development",
+    "details": "Kajola Station in Ogun State is part of ongoing efforts to enhance rail connectivity in southwestern Nigeria."
+  },
+  {
+    "name": "Oyingbo Rail Station",
+    "latitude": 6.5653,
+    "longitude": 3.3555,
+    "type": "development",
+    "details": "Oyingbo Station is one of the stations under development in Lagos State, aiming to enhance urban rail transport."
+  },
+  {
+    "name": "Marina Rail Station",
+    "latitude": 6.4251,
+    "longitude": 3.4051,
+    "type": "development",
+    "details": "A major hub under construction in Lagos, Marina Station will connect several key rail lines and improve passenger flow in the city."
+  },
+  {
+    "name": "Okokomaiko Rail Station",
+    "latitude": 6.5566,
+    "longitude": 3.2836,
+    "type": "development",
+    "details": "Located in Lagos State, Okokomaiko Station is under development as part of the Lagos rail expansion project."
+  },
+  {
+    "name": "Iju Rail Station",
+    "latitude": 6.5860,
+    "longitude": 3.3376,
+    "type": "development",
+    "details": "Iju Station in Lagos State is under construction and will enhance the Lagos metropolitan rail network."
+  },
+  {
+    "name": "Ikeja Rail Station",
+    "latitude": 6.5633,
+    "longitude": 3.3484,
+    "type": "development",
+    "details": "Ikeja Station is part of the Lagos rail modernization project, aimed at improving urban rail services."
+  },
+  {
+    "name": "Oshodi Rail Station",
+    "latitude": 6.5587,
+    "longitude": 3.3472,
+    "type": "development",
+    "details": "Oshodi Station is under construction in Lagos, and will serve as a key stop on the expanding rail network."
+  },
+  {
+    "name": "Mushin Rail Station",
+    "latitude": 6.5524,
+    "longitude": 3.3425,
+    "type": "development",
+    "details": "Mushin Station is part of the Lagos rail system upgrades, aiming to improve connectivity in the city."
+  }
+]
