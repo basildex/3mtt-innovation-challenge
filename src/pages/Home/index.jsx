@@ -85,7 +85,7 @@ function Home() {
           {isLoaded ? (
             <GoogleMap
               center={center}
-              zoom={6}
+              zoom={9}
               onLoad={(map) => (mapRef.current = map)}
               onClick={() => setActiveMarker(null)}
               mapContainerStyle={containerStyle}
