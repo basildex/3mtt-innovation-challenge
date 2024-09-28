@@ -81,10 +81,7 @@ function Home() {
         <h1 className="text-center">Nigerian Railway Stations Map</h1>
         {isLoading && <div>Loading stations...</div>}
         {error && <div>Error fetching stations: {error.message}</div>}
-        <div
-          className="map-container"
-          style={{ height: '100vh', width: '100%' }}
-        >
+        <div style={{ height: '100vh', width: '100%' }}>
           {isLoaded ? (
             <GoogleMap
               center={center}
@@ -120,6 +117,7 @@ function Home() {
             </GoogleMap>
           ) : null}
         </div>
+        <div style={{ height: '100px', backgroundColor: 'transparent' }}></div>
       </div>
     </Fragment>
   );

@@ -68,7 +68,3 @@ body {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
   font-family: 'Verdana', sans-serif; /* Clear and easy-to-read font */
 }
-
-.map-container {
-  margin-bottom: 50px;
-}
