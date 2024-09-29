@@ -68,3 +68,43 @@ body {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
   font-family: 'Verdana', sans-serif; /* Clear and easy-to-read font */
 }
+
+.container {
+  padding: 20px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px; /* Space between input and button */
+}
+
+.search-bar button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.info-header {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.info-content {
+  font-size: 14px;
+}

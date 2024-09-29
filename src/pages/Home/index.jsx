@@ -6,7 +6,7 @@ import {
   useLoadScript,
 } from '@react-google-maps/api';
 import { getAllItems } from '../../data/jsonHandler';
-import './index.css';
+import './index.css'; 
 
 const containerStyle = {
   width: '100%',
@@ -14,7 +14,7 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 9.0765, // Set the center point to a central location in Nigeria
+  lat: 9.0765,
   lng: 7.3986,
 };
 
@@ -27,16 +27,20 @@ function Home() {
   });
 
   const mapRef = useRef(null);
-  const [stations, setStations] = useState([]);
+  const [stations, setStations] = useState([]); 
+  const [filteredStations, setFilteredStations] = useState([]); 
   const [activeMarker, setActiveMarker] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState(''); 
+  const [notFoundMessage, setNotFoundMessage] = useState(''); 
 
   useEffect(() => {
     setIsLoading(true);
     getAllItems()
       .then((data) => {
-        setStations(data);
+        setStations(data); 
+        setFilteredStations(data); 
         setIsLoading(false);
       })
       .catch((err) => {
@@ -75,28 +79,76 @@ function Home() {
     };
   };
 
+  // Filter the stations based on the search term
+  const handleSearch = () => {
+    const filtered = stations.filter((station) =>
+      station.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setFilteredStations(filtered);
+
+    // Set not found message if no stations match the search term
+    if (filtered.length === 0) {
+      setNotFoundMessage('No stations found matching your search.');
+      setActiveMarker(null); 
+    } else {
+      setNotFoundMessage(''); 
+      
+      // Set the map's center to the first matched station
+      const firstMatchedStation = filtered[0];
+      mapRef.current.panTo({
+        lat: firstMatchedStation.latitude,
+        lng: firstMatchedStation.longitude,
+      });
+      setActiveMarker(firstMatchedStation.name); 
+    }
+  };
+
+  // Trigger the search when Enter is pressed
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <Fragment>
       <div className="container">
         <h1 className="text-center">Nigerian Railway Stations Map</h1>
         {isLoading && <div>Loading stations...</div>}
         {error && <div>Error fetching stations: {error.message}</div>}
+        
+        {/* Search Bar */}
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search railway stations..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)} 
+            onKeyDown={handleKeyDown} 
+          />
+          <button onClick={handleSearch}>Search</button> {/* Search button */}
+        </div>
+
+        {/* Not Found Message */}
+        {notFoundMessage && <div className="not-found-message">{notFoundMessage}</div>}
+
         <div style={{ height: '100vh', width: '100%' }}>
           {isLoaded ? (
             <GoogleMap
               center={center}
               zoom={9}
-              onLoad={(map) => (mapRef.current = map)}
+              onLoad={(map) => (mapRef.current = map)} 
               onClick={() => setActiveMarker(null)}
               mapContainerStyle={containerStyle}
               mapId={import.meta.env.VITE_MAP_ID}
             >
-              {stations.map((station) => (
+              {filteredStations.map((station) => (
                 <MarkerF
-                  key={station.name + station.latitude} // Ensure unique key
+                  key={station.name + station.latitude} 
                   position={{ lat: station.latitude, lng: station.longitude }}
                   icon={getMarkerIcon(station.type)}
-                  onClick={() => handleActiveMarker(station.name)} // Set the marker as active when clicked
+                  onClick={() => handleActiveMarker(station.name)} 
                 >
                   {activeMarker === station.name && (
                     <InfoWindowF
