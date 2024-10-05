@@ -8,11 +8,6 @@ import {
 import { getAllItems } from '../../data/jsonHandler';
 import './index.css'; 
 
-const containerStyle = {
-  width: '100%',
-  height: '100vh',
-};
-
 const center = {
   lat: 9.0765,
   lng: 7.3986,
@@ -41,7 +36,6 @@ function Home() {
       .then((data) => {
         setStations(data); 
         setFilteredStations(data); 
-        setIsLoading(false);
       })
       .catch((err) => {
         setError(err);
@@ -102,6 +96,9 @@ function Home() {
       });
       setActiveMarker(firstMatchedStation.name); 
     }
+
+    // Scroll to the search bar
+    document.getElementById('search-bar').scrollIntoView({ behavior: 'smooth' });
   };
 
   // Trigger the search when Enter is pressed
@@ -109,6 +106,28 @@ function Home() {
     if (e.key === 'Enter') {
       handleSearch();
     }
+  };
+
+  // Filter stations by type (major, minor, development)
+  const filterByType = (type) => {
+    const filtered = stations.filter((station) => station.type === type);
+    setFilteredStations(filtered);
+    setNotFoundMessage(filtered.length === 0 ? 'No stations found' : '');
+    
+    // Scroll to the search bar
+    document.getElementById('search-bar').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Show all stations
+  const showAllStations = () => {
+    setFilteredStations(stations); 
+    setNotFoundMessage('');e
+    if (mapRef.current) {
+      mapRef.current.panTo(center); 
+    }
+    
+    // Scroll to the search bar
+    document.getElementById('search-bar').scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -119,7 +138,7 @@ function Home() {
         {error && <div>Error fetching stations: {error.message}</div>}
         
         {/* Search Bar */}
-        <div className="search-bar">
+        <div id="search-bar" className="search-bar">
           <input
             type="text"
             placeholder="Search railway stations..."
@@ -127,20 +146,36 @@ function Home() {
             onChange={(e) => setSearchTerm(e.target.value)} 
             onKeyDown={handleKeyDown} 
           />
-          <button onClick={handleSearch}>Search</button> {/* Search button */}
+          <button onClick={handleSearch}>Search</button> 
+        </div>
+
+        {/* Filter Buttons */}
+        <div className="filter-buttons">
+          <button onClick={() => filterByType('major')} className="btn-major">
+            Major Stations (Red)
+          </button>
+          <button onClick={() => filterByType('minor')} className="btn-minor">
+            Minor Stations (Blue)
+          </button>
+          <button onClick={() => filterByType('development')} className="btn-development">
+            Stations Under Development (Pink)
+          </button>
+          <button onClick={showAllStations} className="btn-all">
+            Show All
+          </button>
         </div>
 
         {/* Not Found Message */}
         {notFoundMessage && <div className="not-found-message">{notFoundMessage}</div>}
 
-        <div style={{ height: '100vh', width: '100%' }}>
+        <div id="root"> 
           {isLoaded ? (
             <GoogleMap
               center={center}
               zoom={9}
               onLoad={(map) => (mapRef.current = map)} 
               onClick={() => setActiveMarker(null)}
-              mapContainerStyle={containerStyle}
+              mapContainerClassName="map-container" 
               mapId={import.meta.env.VITE_MAP_ID}
             >
               {filteredStations.map((station) => (
