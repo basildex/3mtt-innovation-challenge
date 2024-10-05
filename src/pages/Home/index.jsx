@@ -152,13 +152,13 @@ function Home() {
         {/* Filter Buttons */}
         <div className="filter-buttons">
           <button onClick={() => filterByType('major')} className="btn-major">
-            Major Stations (Red)
+            Major Stations 
           </button>
           <button onClick={() => filterByType('minor')} className="btn-minor">
-            Minor Stations (Blue)
+            Minor Stations 
           </button>
           <button onClick={() => filterByType('development')} className="btn-development">
-            Stations Under Development (Pink)
+            Stations Under Development 
           </button>
           <button onClick={showAllStations} className="btn-all">
             Show All
